@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+ <html>
+   <head>
+     <meta charset="utf-8"/>
+     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+     <link type="text/css" rel="stylesheet" href="css/styles.css"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   </head>
+   <body>
+
+     <div class="container">
+
+    <div class="row">
+      <div class="col s12 center">
+        <h1>Header</h1>
+      </div>
+
+      <div class="col s12 center">
+      <form id="search-form" method="post">
+        <input type="text" id="query" value="" class="form-control" />
+        <input type="submit" id="search" class="btn btn-primary" value="Search" />
+    </form>
+      </div>
+      <div class="col s3" id="results">
+
+      </div>
+    </div>
+
+
+     </div>
+
+     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+     <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js'></script>
+     <script type="text/javascript" src="js/materialize.min.js"></script>
+     <script type="text/javascript" src="js/custom.js"></script>
+
+     <script id="results-template" type="text/x-handlebars-template">
+    {{#each albums.items}}
+    <div style="background-image:url({{images.0.url}})" data-album-id="{{id}}" class="cover"></div>
+    {{/each}}
+     </script>
+
+   </body>
+ </html>

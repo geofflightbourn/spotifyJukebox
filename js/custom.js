@@ -28,7 +28,7 @@ $( document ).ready(function() {
       });
   };
 
-  results.addEventListener('click', function(e) {
+  results.addEventListener('click', function(e) { //30 second preview function
       var target = e.target;
       if (target !== null && target.classList.contains('cover')) {
           if (target.classList.contains(playingCssClass)) {

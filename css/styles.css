@@ -1,16 +1,14 @@
-body {
-    padding: 20px;
-}
 
 #search-form, .form-control {
     margin-bottom: 20px;
 }
 
 .cover {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     display: inline-block;
     background-size: cover;
+    padding: 10px;
 }
 
 .cover:hover {
@@ -18,5 +16,5 @@ body {
 }
 
 .cover.playing {
-    border: 5px solid #e45343;
+    border: 5px solid teal;
 }

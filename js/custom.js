@@ -23,14 +23,25 @@ $( document ).ready(function() {
               type: 'album'
           },
           success: function (response) {
-              resultsPlaceholder.innerHTML = template(response);
-          }
+              resultsPlaceholder.innerHTML = template(response); // Almbum covers
+              }
+
       });
   };
 
   results.addEventListener('click', function(e) { //30 second preview function
       var target = e.target;
       if (target !== null && target.classList.contains('cover')) {
+
+            var albumId = target.getAttribute('data-album-id');
+            var uri = 'https://embed.spotify.com/?theme=white&uri=' + encodeURIComponent('spotify:album:' + albumId);
+            $('#player').attr('src', uri);
+
+            var popularity = target.getAttribute('popularity');
+            $('#stats').append('<p>' + popularity + '</p>')
+
+
+
           if (target.classList.contains(playingCssClass)) {
               audioObject.pause();
           } else {
@@ -50,9 +61,9 @@ $( document ).ready(function() {
               });
           }
       }
-  });
+  }); //end preview_url
 
-  var $loading = $('#loadingDiv').hide();
+  var $loading = $('#loadingDiv').hide(); //show / hide loading bar
 $(document).ajaxStart(function () {
     $loading.show();
   }).ajaxStop(function () {

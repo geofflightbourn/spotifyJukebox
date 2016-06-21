@@ -28,15 +28,23 @@
   <ul class="collapsible" data-collapsible="accordion">
     <li>
       <div class="collapsible-header"><i class="material-icons">perm_identity</i>About</div>
-      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+      <div class="collapsible-body"><p></p></div>
     </li>
     <li>
-      <div class="collapsible-header"><i class="material-icons">info_outline</i>Listeners</div>
-      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+      <div class="collapsible-header"><i class="material-icons">info_outline</i>Stats</div>
+      <div class="collapsible-body" id="stats">
+      </div>
     </li>
     <li>
       <div class="collapsible-header"><i class="material-icons">queue_music</i>Album</div>
-      <div class="collapsible-body center-align"><iframe src="https://embed.spotify.com/?uri=spotify%3Aalbum%3A2rp5riHULWgrXPsDtsp1ir&theme=white" width="300" height="380" frameborder="0" allowtransparency="true"></iframe></div>
+      <div class="collapsible-body center-align">
+          <iframe
+            id="player"
+            src="https://embed.spotify.com/?uri=spotify%3Aalbum%3A2rp5riHULWgrXPsDtsp1ir&theme=white"
+            width="300" height="380" frameborder="0" allowtransparency="true"
+            >
+          </iframe>
+      </div>
     </li>
   </ul>
 
@@ -60,7 +68,7 @@
      <script id="results-template" type="text/x-handlebars-template">
        <br>
     {{#each albums.items}}
-    <div style="background-image:url({{images.0.url}})" data-album-id="{{id}}" class="cover col s3"></div>
+    <div style="background-image:url({{images.0.url}})" data-album-id="{{id}}" popularity="{{popularity}}" class="cover col s3"></div>
     {{/each}}
      </script>
 

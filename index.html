@@ -68,7 +68,13 @@
      <script id="results-template" type="text/x-handlebars-template">
        <br>
     {{#each albums.items}}
-    <div style="background-image:url({{images.0.url}})" data-album-id="{{id}}" popularity="{{popularity}}" class="cover col s3"></div>
+    {{log this}}
+    <div
+    style="background-image:url({{images.0.url}})"
+    data-album-id="{{id}}"
+    data-artist-id="{{id}}"
+    data-album-releaseDate="{{release_date}}"
+    class="cover col s3"></div>
     {{/each}}
      </script>
 

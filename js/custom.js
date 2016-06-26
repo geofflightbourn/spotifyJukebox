@@ -58,7 +58,7 @@ $( document ).ready(function() {
         }
         fetchTracks(albumId, function(data)  {
           debugger;
-          $('#albumStats, #artistStats').empty().remove("p:even") //append html to page
+          $('#albumStats, #artistStats').empty().remove("p:nth-child(3)") //append html to page
 
           var albumStats = (
           '<h6> Title </h6>' +

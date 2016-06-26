@@ -58,7 +58,7 @@ $( document ).ready(function() {
         }
         fetchTracks(albumId, function(data)  {
           debugger;
-          $('#albumStats').empty().remove("p:even") //append html to page
+          $('#albumStats, #artistStats').empty().remove("p:even") //append html to page
 
           var albumStats = (
           '<h6> Title </h6>' +
@@ -80,7 +80,7 @@ $( document ).ready(function() {
             '<h6> Spotify Popularity </h6>' +
             '<p>'+ data.artistData.popularity +'<p>' +
             '<h6> Spotify Followers </h6>' +
-            '<p>'+ data.artistData.followers.total +'<p>' 
+            '<p>'+ data.artistData.followers.total +'<p>'
           )
             $('#artistStats').append(artistStats)
 

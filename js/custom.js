@@ -58,29 +58,29 @@ $( document ).ready(function() {
         }
         fetchTracks(albumId, function(data)  {
           debugger;
-          $('#albumStats, #artistStats').empty().remove("p:nth-child(3)") //append html to page
+          $('#albumStats, #artistStats').empty() //append html to page
 
           var albumStats = (
-          '<h6> Title </h6>' +
-          '<p>'+ data.albumData.name +'<p>' +
-          '<h6> Date </h6>' +
-          '<p>'+ data.albumData.release_date + '<p>' +
-          '<h6> Label </h6>' +
-          '<p>'+ data.albumData.copyrights[0].text +'<p>' +
-          '<h6> Popularity </h6>' +
-          '<p>'+ data.albumData.popularity +'<p>'
+          '<h5> Title </h5>' +
+          '<p>'+ data.albumData.name +'</p>' +
+          '<h5> Date </h5>' +
+          '<p>'+ data.albumData.release_date + '</p>' +
+          '<h5> Label </h5>' +
+          '<p>'+ data.albumData.copyrights[0].text +'</p>' +
+          '<h5> Popularity </h5>' +
+          '<p>'+ data.albumData.popularity +'</p>'
         )
           $('#albumStats').append(albumStats)
 
           var artistStats = (
-            '<h6> Name </h6>' +
-            '<p>'+ data.artistData.name +'<p>' +
-            '<h6> Genre </h6>' +
-            '<p>'+ data.artistData.genres[1] +'<p>' +
-            '<h6> Spotify Popularity </h6>' +
-            '<p>'+ data.artistData.popularity +'<p>' +
-            '<h6> Spotify Followers </h6>' +
-            '<p>'+ data.artistData.followers.total +'<p>'
+            '<h5> Name </h5>' +
+            '<p>'+ data.artistData.name +'</p>' +
+            '<h5> Genre </h5>' +
+            '<p>'+ data.artistData.genres[1] +'</p>' +
+            '<h5> Spotify Popularity </h5>' +
+            '<p>'+ data.artistData.popularity +'</p>' +
+            '<h5> Spotify Followers </h5>' +
+            '<p>'+ data.artistData.followers.total +'</p>'
           )
             $('#artistStats').append(artistStats)
 
